@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2142987927">
+    <data-source source="LOCAL" name="Rails eaterie: development" uuid="1d16ee64-9691-46a4-b166-fe97eea8d29c">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:eaterie_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails eaterie: test" uuid="cabac8a4-8ac9-490d-98dc-867628580d5e">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:eaterie_test</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
