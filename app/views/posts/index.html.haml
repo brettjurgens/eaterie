@@ -3,6 +3,7 @@
     .post
       = image_tag post.image_url
       %br
+      = "User: "
       = post.description
       - @recipe = post.recipe
       %div.recipe_name
