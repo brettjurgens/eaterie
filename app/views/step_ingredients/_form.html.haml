@@ -1,0 +1,13 @@
+= form_for @step_ingredient do |f|
+  - if @step_ingredient.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@step_ingredient.errors.count, "error")} prohibited this step_ingredient from being saved:"
+      %ul
+        - @step_ingredient.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :amount
+    = f.text_field :amount
+  .actions
+    = f.submit 'Save'

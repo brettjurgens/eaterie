@@ -1,0 +1,34 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#posts {
+  width: 520px;
+  margin: 0 auto;
+  .post {
+    margin: 0 0 25px;
+    padding: 15px 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    img {
+      width: 500px;
+    }
+    .recipe_name {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 5px;
+    }
+    .ingredients {
+      &:before {
+        content: '(';
+      }
+      &:after {
+        content: ')';
+      }
+      color: #aaa;
+      a:link {
+        color: #aaa;
+      }
+    }
+  }
+}

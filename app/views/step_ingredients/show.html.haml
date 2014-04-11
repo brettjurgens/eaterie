@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Amount:
+  = @step_ingredient.amount
+
+= link_to 'Edit', edit_step_ingredient_path(@step_ingredient)
+\|
+= link_to 'Back', step_ingredients_path

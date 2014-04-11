@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :ingredients
+
+  resources :step_ingredients
+
+  resources :recipe_steps
+
+  resources :recipes
+
+  resources :posts
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get '/auth/:provider/callback', :to => 'sessions#callback'
   # The priority is based upon order of creation: first created -> highest priority.

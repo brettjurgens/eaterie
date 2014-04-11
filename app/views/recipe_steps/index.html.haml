@@ -1,0 +1,19 @@
+%h1 Listing recipe_steps
+
+%table
+  %tr
+    %th Description
+    %th
+    %th
+    %th
+
+  - @recipe_steps.each do |recipe_step|
+    %tr
+      %td= recipe_step.description
+      %td= link_to 'Show', recipe_step
+      %td= link_to 'Edit', edit_recipe_step_path(recipe_step)
+      %td= link_to 'Destroy', recipe_step, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Recipe step', new_recipe_step_path

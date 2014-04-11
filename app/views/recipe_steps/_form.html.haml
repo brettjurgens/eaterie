@@ -1,0 +1,13 @@
+= form_for @recipe_step do |f|
+  - if @recipe_step.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@recipe_step.errors.count, "error")} prohibited this recipe_step from being saved:"
+      %ul
+        - @recipe_step.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :description
+    = f.text_field :description
+  .actions
+    = f.submit 'Save'

@@ -44,6 +44,8 @@ gem 'haml'
 gem 'haml-rails'
 gem 'omniauth'
 gem 'rails_admin'
+gem 'paperclip', '~> 4.1'
+gem 'aws-sdk', '~> 1.5.7'
 
 group :development do
   gem 'better_errors'

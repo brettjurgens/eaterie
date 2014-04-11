@@ -1,0 +1,19 @@
+%h1 Listing step_ingredients
+
+%table
+  %tr
+    %th Amount
+    %th
+    %th
+    %th
+
+  - @step_ingredients.each do |step_ingredient|
+    %tr
+      %td= step_ingredient.amount
+      %td= link_to 'Show', step_ingredient
+      %td= link_to 'Edit', edit_step_ingredient_path(step_ingredient)
+      %td= link_to 'Destroy', step_ingredient, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Step ingredient', new_step_ingredient_path

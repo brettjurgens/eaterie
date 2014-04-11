@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Description:
+  = @recipe_step.description
+
+= link_to 'Edit', edit_recipe_step_path(@recipe_step)
+\|
+= link_to 'Back', recipe_steps_path
