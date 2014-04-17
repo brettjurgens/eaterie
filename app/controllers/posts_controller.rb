@@ -6,13 +6,17 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     follows = current_user.followees(User)
-    followees = []
-    follows.each do |followee|
-      followees << followee
-    end
+    if follows.length == 0
+      @posts = []
+    elsif
+      followees = []
+      follows.each do |followee|
+        followees << followee
+      end
 
-    # SELECT * FROM Posts WHERE user_id=ANY(ARRAY[1,2])
-    @posts = Post.where("user_id=ANY(ARRAY [?])", followees).order('updated_at DESC')
+      # SELECT * FROM Posts WHERE user_id=ANY(ARRAY[1,2])
+      @posts = Post.where("user_id=ANY(ARRAY [?])", followees).order('updated_at DESC')
+    end
   end
 
   # GET /posts/1
