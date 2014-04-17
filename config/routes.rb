@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
   resources :ingredients
 
   resources :step_ingredients
@@ -16,6 +17,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+  # devise_for :users, :skip => [:sessions]
+
+  devise_scope :user do
+    get 'sign_out', :to => 'devise/sessions#destroy'
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

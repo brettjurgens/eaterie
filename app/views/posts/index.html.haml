@@ -17,4 +17,5 @@
               %span.ingredients
                 - @step_ingredients.each do |step_ingredient|
                   = "#{step_ingredient.amount}"
-                  = link_to step_ingredient.ingredients.first.name, step_ingredient.ingredients.first
+                  - step_ingredient.ingredients.each do |ingredient|
+                    = link_to ingredient.name, ingredient
