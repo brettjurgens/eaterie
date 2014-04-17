@@ -52,6 +52,7 @@ gem 'aws-sdk', '~> 1.5.7'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'hirb'
 end
 
 gem 'rails_12factor', group: :production

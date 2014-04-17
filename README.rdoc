@@ -1,28 +1,9 @@
-== README
+== Eaterie
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+People love food. People love social networks.
 
-Things you may want to cover:
+Why not combine the two...?
 
-* Ruby version
+Introducing Eaterie, the recipe sharing website.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Enjoy.
