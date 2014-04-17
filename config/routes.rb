@@ -27,7 +27,8 @@ Rails.application.routes.draw do
   # devise_for :users, :skip => [:sessions]
 
   devise_scope :user do
-    get 'sign_out', :to => 'devise/sessions#destroy'
+    get 'sign_out', :to => 'devise/sessions#destroy', as: 'logout'
+    get 'sign_in', :to => 'welcome#fb_login', as: 'login'
   end
 
 

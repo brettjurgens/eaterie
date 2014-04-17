@@ -1,5 +1,5 @@
 %h1
   = @user.name
-- @posts.each do |post|
-  %br
-  = image_tag post.image_url
+#posts
+  - @posts.each do |post|
+    = render post

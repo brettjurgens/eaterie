@@ -10,6 +10,7 @@ class PostsController < ApplicationController
       @posts = []
     elsif
       followees = []
+      followees << current_user
       follows.each do |followee|
         followees << followee
       end

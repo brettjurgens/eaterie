@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
   def show
-    @posts = @user.posts
+    @posts = @user.posts.reverse
   end
 
   private

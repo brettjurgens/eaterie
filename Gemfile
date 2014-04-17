@@ -42,6 +42,7 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'haml'
 gem 'haml-rails'
+gem 'font-awesome-sass'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'acts_as_commentable'

@@ -1,28 +1,10 @@
 #posts
   - if @posts.length == 0
-    No one you're following has posted anything. Perhaps you should find better people to follow?
+    No one you're following has posted anything.
+    %br
+    Perhaps you should find better people to follow...
+    %br
+    Wouldn't it be cool if we made suggestions for that?
   - else
     - @posts.each do |post|
-      .post
-        .avatar
-          = link_to image_tag(post.user.image), post.user
-        .post_info
-          .post_user
-            = post.user.name
-          .post_desc
-            = post.description
-        = image_tag post.image_url
-        - @recipe = post.recipe
-        %div.recipe_name
-          = @recipe.name
-        %ol
-          - @recipe.recipe_steps.each do |step|
-            %li
-              = step.description
-              - @step_ingredients = step.step_ingredients
-              - if @step_ingredients.length > 0
-                %span.ingredients
-                  - @step_ingredients.each do |step_ingredient|
-                    = "#{step_ingredient.amount}"
-                    - step_ingredient.ingredients.each do |ingredient|
-                      = link_to ingredient.name, ingredient
+      = render post
