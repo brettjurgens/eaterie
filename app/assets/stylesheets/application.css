@@ -22,3 +22,12 @@
 body {
     background-color: #eee;
 }
+
+.container {
+    width: 520px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+}
