@@ -5,7 +5,14 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    follows = current_user.followees(User)
+    followees = []
+    follows.each do |followee|
+      followees << followee
+    end
+
+    # SELECT * FROM Posts WHERE user_id=ANY(ARRAY[1,2])
+    @posts = Post.where("user_id=ANY(ARRAY [?])", followees).order('updated_at DESC')
   end
 
   # GET /posts/1

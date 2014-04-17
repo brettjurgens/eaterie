@@ -10,6 +10,12 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  resources :users do
+    post 'follow',   to: 'socializations#follow'
+    get 'follow',   to: 'socializations#follow' # test
+    post 'unfollow', to: 'socializations#unfollow'
+  end
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get '/auth/:provider/callback', :to => 'sessions#callback'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -23,6 +29,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy'
   end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook]
 
+  acts_as_follower
+  acts_as_followable
+
   has_many :posts
 
   def self.find_for_facebook_oauth(auth)

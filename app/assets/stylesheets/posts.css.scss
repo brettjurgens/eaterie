@@ -10,8 +10,27 @@
     padding: 15px 10px;
     border: 1px solid #ccc;
     background-color: #fff;
-    img {
+    position: relative;
+    .avatar {
+      position: absolute;
+      top: 10px;
+      left: -51px;
+      border-left: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      height: 52px;
+      width: 51px;
+    }
+    .post_user {
+      font-weight: bold;
+    }
+    .post_desc {
+      margin-bottom: 5px;
+    }
+    &>img {
       width: 499px;
+    }
+    .post_info {
     }
     .recipe_name {
       font-weight: bold;

@@ -1,10 +1,14 @@
 #posts
-  - @posts.reverse.each do |post|
+  - @posts.each do |post|
     .post
+      .avatar
+        = link_to image_tag(post.user.image), post.user
+      .post_info
+        .post_user
+          = post.user.name
+        .post_desc
+          = post.description
       = image_tag post.image_url
-      %br
-      = "User: "
-      = post.description
       - @recipe = post.recipe
       %div.recipe_name
         = @recipe.name
