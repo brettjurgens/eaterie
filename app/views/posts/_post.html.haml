@@ -9,7 +9,7 @@
   = image_tag post.image_url
   - @recipe = post.recipe
   %div.recipe_name
-    = @recipe.name
+    = link_to @recipe.name, post
   %ol
     - @recipe.recipe_steps.each do |step|
       %li
