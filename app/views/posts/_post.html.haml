@@ -23,10 +23,10 @@
                 - step_ingredient.ingredients.each do |ingredient|
                   = link_to ingredient.name, ingredient
   .post_stats
-    %a.like{ :href => "#", 'data-post' => post.id }
+    %a.like{ :id => "like_#{post.id}", :href => "#", 'data-post' => post.id }
       - if current_user.likes?(post)
         Unlike
       - else
         Like
-
-    = post.likes
+    %span.like_info{ :id => "like_info_#{post.id}" }
+      = post.likes

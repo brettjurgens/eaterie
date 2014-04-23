@@ -8,7 +8,8 @@ class SocializationsController < ApplicationController
 
   def toggle_like
     likes = current_user.toggle_like!(@socializable)
-    render json: { like: likes }
+    new_like_info = @socializable.likes
+    render json: { like: likes, like_info: new_like_info }
   end
 
   private

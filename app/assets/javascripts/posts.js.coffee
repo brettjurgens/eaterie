@@ -7,7 +7,8 @@ $ ->
     e.preventDefault();
     post_id = $(this).data('post')
     $.post "/posts/#{post_id}/like", (data) ->
+      $("#like_info_#{post_id}").text(data.like_info)
       if data.like
-        $('.like').text('Unlike')
+        $("#like_#{post_id}").text('Unlike')
       else
-        $('.like').text('Like')
+        $("#like_#{post_id}").text('Like')

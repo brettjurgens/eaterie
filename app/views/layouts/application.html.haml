@@ -18,16 +18,18 @@
         = yield(:scroll_header)
       %header#header.header
         .header-container.row
-          .logo
-            = link_to "eaterie", root_url
-          .header-right
-            - if user_signed_in?
-              = link_to current_user do
-                = image_tag current_user.avatar(20,20)
-                %span.user-name
-                  = current_user.name
-              &nbsp;
-              = link_to 'logout', logout_path
-            - else
-              = yield(:scroll_header)
+          .small-3.columns
+            .logo
+              = link_to "eaterie", root_url
+          .small-9.columns
+            .header-right
+              - if user_signed_in?
+                = link_to current_user do
+                  = image_tag current_user.avatar(20,20)
+                  %span.user-name
+                    = current_user.name
+                &nbsp;
+                = link_to 'logout', logout_path
+              - else
+                = yield(:scroll_header)
       = yield
