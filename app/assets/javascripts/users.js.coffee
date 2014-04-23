@@ -13,8 +13,9 @@ $ ->
         $("<a class='follow' href='#' data-user='#{user_id}' data-name='#{user_name}'>Follow</a>")
           .appendTo('#follow_info')
 
+  # combine follow/unfollow...
   $(document).on 'click', '.follow', (e) ->
-    event.preventDefault();
+    e.preventDefault();
     user_id = $(this).data('user')
     user_name = $(this).data('name')
     $.post "/users/#{user_id}/follow", (data) ->

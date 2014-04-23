@@ -57,4 +57,9 @@ group :development do
   gem 'hirb'
 end
 
+gem 'compass-rails'
+# Add any compass extensions here
+gem 'foundation-rails'
+
+
 gem 'rails_12factor', group: :production

@@ -1,52 +1,56 @@
 // Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #posts {
-  width: 520px;
-  margin: 0 auto;
+  width: 545px;
+  margin: 20px auto;
   .post {
-    margin: 0 0 25px;
-    padding: 15px 10px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    position: relative;
-    .avatar {
-      position: absolute;
-      top: 10px;
-      left: -51px;
-      border-left: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      border-top: 1px solid #ccc;
-      height: 52px;
-      width: 51px;
-    }
-    .post_user {
-      font-weight: bold;
-    }
-    .post_desc {
-      margin-bottom: 5px;
-    }
-    &>img {
-      width: 498px;
-    }
-    .post_info {
-    }
-    .recipe_name {
-      font-weight: bold;
-      font-size: 1.2em;
-      margin-top: 5px;
-    }
-    .ingredients {
-      &:before {
-        content: '(';
+    width: 100%;
+    margin: 0 auto 25px 35px;
+    .post-container {
+      width: 520px;
+      padding: 15px 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      position: relative;
+      .avatar {
+        position: absolute;
+        top: 10px;
+        left: -51px;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        height: 52px;
+        width: 51px;
       }
-      &:after {
-        content: ')';
+      .post_user {
+        font-weight: bold;
       }
-      color: #aaa;
-      a:link {
+      .post_desc {
+        margin-bottom: 5px;
+      }
+      &>img {
+        width: 498px;
+      }
+      .post_info {
+      }
+      .recipe_name {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-top: 5px;
+      }
+      .ingredients {
+        &:before {
+          content: '(';
+        }
+        &:after {
+          content: ')';
+        }
         color: #aaa;
+        a:link {
+          color: #aaa;
+        }
       }
     }
   }
