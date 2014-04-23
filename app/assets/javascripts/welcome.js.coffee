@@ -7,18 +7,18 @@ $ ->
     e.preventDefault()
     target = @hash
     $target = $(target)
-    offset = $target.offset().top - $('#scroll-header').height()
+    offset = $target.offset().top - 20
     $('html, body').stop().animate {
       'scrollTop': offset
     }, 500, 'swing', ->
       window.location.hash = target
 
   $(window).scroll ->
-    if $(@).scrollTop() > 540 and !$('#scroll-header').hasClass('open')
+    if $(@).scrollTop() > 500 and !$('#scroll-header').hasClass('open')
       $('#scroll-header').addClass('open')
       $('#scroll-header').children().fadeIn()
       $('#scroll-header').slideDown()
-    else if $(@).scrollTop() <= 540
+    else if $(@).scrollTop() <= 500
       $('#scroll-header').removeClass('open')
       $('#scroll-header').children().fadeOut()
       $('#scroll-header').slideUp()
