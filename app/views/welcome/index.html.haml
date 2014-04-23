@@ -1,17 +1,17 @@
 - content_for :scroll_header do
   .row
     %ul.menu
-      = link_to '#header' do
+      %a.scroller{'data-link' => '#header'}
         %li.scroll-only
           %i.fa.fa-arrow-circle-o-up
           Top
-      = link_to '#about' do
+      %a.scroller{'data-link' => '#about'}
         %li
           About
-      = link_to '#faq' do
+      %a.scroller{'data-link' => '#faq'}
         %li
           FAQ
-      = link_to '#learnmore' do
+      %a.scroller{'data-link' => '#learnmore'}
         %li
           Learn More
 

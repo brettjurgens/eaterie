@@ -3,15 +3,14 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $('a[href^="#"]').on 'click.smoothscroll', (e) ->
+  $('a.scroller').on 'click.smoothscroll', (e) ->
     e.preventDefault()
-    target = @hash
+    target = $(@).data('link')
     $target = $(target)
     offset = $target.offset().top - 20
     $('html, body').stop().animate {
       'scrollTop': offset
-    }, 500, 'swing', ->
-      window.location.hash = target
+    }, 500, 'swing'
 
   $(window).scroll ->
     if $(@).scrollTop() > 500 and !$('#scroll-header').hasClass('open')
