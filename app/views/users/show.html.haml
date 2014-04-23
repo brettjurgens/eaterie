@@ -4,7 +4,7 @@
   #follow_info
     - if current_user.follows?(@user)
       = "You are following #{@user.name}."
-      %a.unfollow{'href' => '#', 'data-user' => @user.id, 'data-name' => @user.name}
+      %a.follow{'href' => '#', 'data-user' => @user.id, 'data-name' => @user.name}
         Unfollow
     - else
       %a.follow{'href' => '#', 'data-user' => @user.id, 'data-name' => @user.name}

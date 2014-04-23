@@ -8,12 +8,12 @@ Rails.application.routes.draw do
 
   resources :recipes
 
-  resources :posts
+  resources :posts do
+    post 'like', to: 'socializations#toggle_like'
+  end
 
   resources :users do
-    post 'follow',   to: 'socializations#follow'
-    get 'follow',   to: 'socializations#follow' # test
-    post 'unfollow', to: 'socializations#unfollow'
+    post 'follow', to: 'socializations#toggle_follow'
   end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

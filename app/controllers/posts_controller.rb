@@ -14,7 +14,6 @@ class PostsController < ApplicationController
       follows.each do |followee|
         followees << followee
       end
-
       # SELECT * FROM Posts WHERE user_id=ANY(ARRAY[1,2])
       @posts = Post.where("user_id=ANY(ARRAY [?])", followees).order('updated_at DESC')
     end

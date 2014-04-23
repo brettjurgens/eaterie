@@ -22,3 +22,11 @@
                 = "#{step_ingredient.amount}"
                 - step_ingredient.ingredients.each do |ingredient|
                   = link_to ingredient.name, ingredient
+  .post_stats
+    %a.like{ :href => "#", 'data-post' => post.id }
+      - if current_user.likes?(post)
+        Unlike
+      - else
+        Like
+
+    = post.likes

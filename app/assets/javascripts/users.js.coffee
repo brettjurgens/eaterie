@@ -3,24 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $(document).on 'click', '.unfollow', (e) ->
-    e.preventDefault();
-    user_id = $(this).data('user')
-    user_name = $(this).data('name')
-    $.post "/users/#{user_id}/unfollow", (data) ->
-      if !data.follow
-        $('#follow_info').empty()
-        $("<a class='follow' href='#' data-user='#{user_id}' data-name='#{user_name}'>Follow</a>")
-          .appendTo('#follow_info')
-
-  # combine follow/unfollow...
   $(document).on 'click', '.follow', (e) ->
     e.preventDefault();
     user_id = $(this).data('user')
     user_name = $(this).data('name')
     $.post "/users/#{user_id}/follow", (data) ->
-        if data.follow
-          $('#follow_info').empty()
-          $('#follow_info').text("You are following #{user_name}. ")
-          $("<a class='unfollow' href='#' data-user='#{user_id}' data-name='#{user_name}'>Unfollow</a>")
-            .appendTo('#follow_info')
+      $('#follow_info').empty()
+      if data.follow
+        $('#follow_info').text("You are following #{user_name}. ")
+        $("<a class='follow' href='#' data-user='#{user_id}' data-name='#{user_name}'>Unfollow</a>")
+        .appendTo('#follow_info')
+      else
+        $("<a class='follow' href='#' data-user='#{user_id}' data-name='#{user_name}'>Follow</a>")
+        .appendTo('#follow_info')

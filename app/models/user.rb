@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
 
   has_many :posts
 
+  def recommended_users
+    follow_recommendations = User.joins("JOIN follows ON users.id = followable_id").limit(3)
+
+    return follow_recommendations
+  end
+
   def avatar(width, height)
     return image + "?width=#{width}&height=#{height}"
   end
