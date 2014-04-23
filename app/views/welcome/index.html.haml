@@ -1,3 +1,20 @@
+- content_for :scroll_header do
+  .row
+    %ul.menu
+      = link_to '#header' do
+        %li.scroll-only
+          %i.fa.fa-arrow-circle-o-up
+          Top
+      = link_to '#about' do
+        %li
+          About
+      = link_to '#faq' do
+        %li
+          FAQ
+      = link_to '#learnmore' do
+        %li
+          Learn More
+
 %section#home-hero
   .row
     .medium-7.columns
@@ -11,10 +28,23 @@
     .large-4.medium-6.columns
       = link_to login_url do
         .facebook
+          %i.fa.fa-facebook-square
           Connect with Facebook
-Yo dawg, you should log in.
-%br
-%br
-  = link_to login_url do
-    %i.fa.fa-facebook-square
-    Log in with facebook
+
+%section#huge-break
+
+%section#about
+  %h1
+    About
+
+%section#huge-break
+
+%section#faq
+  %h1
+    FAQs
+
+%section#huge-break
+
+%section#learnmore
+  %h1
+    Learn More

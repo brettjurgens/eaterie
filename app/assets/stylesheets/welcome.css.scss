@@ -29,3 +29,44 @@
     font-size: 1.5em;
   }
 }
+
+#huge-break {
+  height: 1000px;
+}
+
+#scroll-header {
+  height: 40px;
+  background-color: #3a465d;
+  width: 100%;
+  position: fixed;
+  display: none;
+}
+
+#header {
+  .scroll-only {
+    display: none;
+  }
+  ul.menu {
+    li {
+      margin-top: -11px;
+      font-weight: normal;
+    }
+  }
+}
+
+ul.menu {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+  li {
+    color: #fff;
+    display: inline-block;
+    padding: 11px 20px;
+    font-size: 1.1em;
+    &:hover {
+      background-color: rgba(0, 0, 0, .2);
+    }
+  }
+}
