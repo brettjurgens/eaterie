@@ -17,11 +17,15 @@
  *= require font-awesome
  */
 
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700,600);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,300,700,600|Libre+Baskerville:400,700);
 
 *{
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #3b5998;
 }
 
 body {
@@ -34,6 +38,10 @@ body {
 
 .bold {
   font-weight: bold;
+}
+.small-avatar {
+  width:20px;
+  height:20px;
 }
 
 header {
@@ -75,6 +83,9 @@ header {
       a {
         vertical-align: top;
         color: #fff;
+      }
+      &>a {
+        margin-left: 10px;
       }
     }
   }

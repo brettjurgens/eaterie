@@ -22,11 +22,19 @@
                 = "#{step_ingredient.amount}"
                 - step_ingredient.ingredients.each do |ingredient|
                   = link_to ingredient.name, ingredient
-  .post_stats
-    %a.like{ :id => "like_#{post.id}", :href => "#", 'data-post' => post.id }
-      - if current_user.likes?(post)
-        Unlike
-      - else
-        Like
-    %span.like_info{ :id => "like_info_#{post.id}" }
-      = post.likes
+    .likes
+      %a.like{ :id => "like_#{post.id}", :href => "#", 'data-post' => post.id }
+        - if current_user.likes?(post)
+          Unlike
+        - else
+          Like
+      %span.like_info{ :id => "like_info_#{post.id}" }
+        = post.likes
+
+  .post-stats
+    %div.comments{:id=>"comments_#{post.id}"}
+      - post.comments.each do |comment|
+        = render comment
+      .comment.new-comment-container
+        = link_to image_tag(current_user.avatar(32,32), :class=>'comment-avatar'), current_user
+        %input.new-comment{ :type => 'text', :placeholder => 'Write a comment...', 'data-post' => post.id }

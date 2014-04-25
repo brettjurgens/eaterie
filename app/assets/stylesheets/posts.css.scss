@@ -10,7 +10,7 @@
     margin: 0 auto 25px 35px;
     .post-container {
       width: 520px;
-      padding: 15px 10px 0;
+      padding: 10px 10px 5px;
       border: 1px solid #ccc;
       background-color: #fff;
       position: relative;
@@ -25,6 +25,7 @@
         width: 51px;
       }
       .post_user {
+        font-size: 14px;
         font-weight: bold;
       }
       .post_desc {
@@ -52,16 +53,53 @@
           color: #aaa;
         }
       }
+      .likes {
+        .like {
+          margin-right: 5px;
+        }
+      }
     }
-    .post_stats {
+    .post-stats {
       width: 520px;
       background-color: #eee;
-      padding: 5px 10px;
+      padding: 10px;
       border-bottom: 1px solid #ccc;
       border-left: 1px solid #ccc;
       border-right: 1px solid #ccc;
-      a {
-        margin-right: 10px;
+      font-family: Helvetica, Arial, sans-serif;
+      line-height: 16px;
+      .comments {
+        .comment {
+          &:not(:first-of-type) {
+            margin-top: 5px;
+          }
+          .comment-avatar {
+            width: 32px;
+            height: 32px;
+            margin-right: 5px;
+          }
+          .comment-content {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 12px;
+            .comment-user {
+              font-weight: bold;
+            }
+            time {
+              color: #666;
+            }
+          }
+          .new-comment {
+            border: 1px solid #ccc;
+            width: 498px - 37px - 4px;
+            margin: 0;
+            vertical-align: top;
+            padding: 8px;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
       }
     }
   }

@@ -1,0 +1,9 @@
+.comment
+  = link_to image_tag(comment.user.avatar(32,32), :class=>'comment-avatar'), comment.user
+  .comment-content
+    %span.comment-user
+      = link_to comment.user.name, comment.user
+    %span.comment-comment
+      = comment.comment
+    %br
+    = local_time_ago(comment.created_at)

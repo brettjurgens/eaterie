@@ -24,12 +24,16 @@
           .small-9.columns
             .header-right
               - if user_signed_in?
+                %a.new_post{ :href=>"/posts/new" }
+                  %i.fa.fa-plus-circle
+                  New Post
                 = link_to current_user do
-                  = image_tag current_user.avatar(20,20)
+                  = image_tag current_user.avatar(20,20), :class=>'small-avatar'
                   %span.user-name
                     = current_user.name
-                &nbsp;
                 = link_to 'logout', logout_path
               - else
                 = yield(:scroll_header)
       = yield
+  %footer.footer
+    &copy;2014 eaterie

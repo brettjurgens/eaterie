@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
 //= require posts
-
-$(function(){ $(document).foundation(); });
+//= require local_time

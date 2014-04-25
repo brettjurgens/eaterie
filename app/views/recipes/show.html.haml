@@ -1,12 +1,13 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @recipe.name
-%p
-  %b Description:
-  = @recipe.description
-
-= link_to 'Edit', edit_recipe_path(@recipe)
-\|
-= link_to 'Back', recipes_path
+%div.recipe_name
+  = link_to @recipe.name, @recipe
+%ol
+  - @recipe.recipe_steps.each do |step|
+    %li
+      = step.description
+      - @step_ingredients = step.step_ingredients
+      - if @step_ingredients.length > 0
+        %span.ingredients
+          - @step_ingredients.each do |step_ingredient|
+            = "#{step_ingredient.amount}"
+            - step_ingredient.ingredients.each do |ingredient|
+              = link_to ingredient.name, ingredient

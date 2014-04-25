@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     post 'like', to: 'socializations#toggle_like'
+    post 'comment', to: 'posts#comment'
   end
 
   resources :users do

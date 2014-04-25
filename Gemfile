@@ -61,5 +61,7 @@ gem 'compass-rails'
 # Add any compass extensions here
 gem 'foundation-rails'
 
+gem 'local_time'
+
 
 gem 'rails_12factor', group: :production
