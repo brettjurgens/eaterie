@@ -1,14 +1,14 @@
-%h1
-  = @user.name
-- if current_user != @user
-  #follow_info
-    - if current_user.follows?(@user)
-      = "You are following #{@user.name}."
-      %a.follow{'href' => '#', 'data-user' => @user.id, 'data-name' => @user.name}
-        Unfollow
-    - else
-      %a.follow{'href' => '#', 'data-user' => @user.id, 'data-name' => @user.name}
-        Follow
+%div.user
+  %span.name
+    = @user.name
+  - if current_user != @user
+    #follow_info
+      - if current_user.follows?(@user)
+        %a.follow{'href' => '#', 'data-user' => @user.id, 'data-name' => @user.name}
+          Unfollow
+      - else
+        %a.follow{'href' => '#', 'data-user' => @user.id, 'data-name' => @user.name}
+          Follow
 #posts
   - @posts.each do |post|
     = render post

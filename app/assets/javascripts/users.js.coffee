@@ -10,7 +10,6 @@ $ ->
     $.post "/users/#{user_id}/follow", (data) ->
       $('#follow_info').empty()
       if data.follow
-        $('#follow_info').text("You are following #{user_name}. ")
         $("<a class='follow' href='#' data-user='#{user_id}' data-name='#{user_name}'>Unfollow</a>")
         .appendTo('#follow_info')
       else

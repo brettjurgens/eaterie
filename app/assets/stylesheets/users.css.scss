@@ -1,3 +1,15 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user {
+  width: 545px;
+  margin: 20px auto;
+  .name {
+    font-size: 24px;
+  }
+  #follow_info {
+    display: inline;
+    font-size: 16px;
+  }
+}
