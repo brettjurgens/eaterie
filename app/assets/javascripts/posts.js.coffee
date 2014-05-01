@@ -4,7 +4,7 @@
 
 $ ->
   $(document).on 'click', '.like', (e) ->
-    e.preventDefault();
+    e.preventDefault()
     post_id = $(@).data('post')
     $.post "/posts/#{post_id}/like", (data) ->
       $("#like_info_#{post_id}").text(data.like_info)
@@ -24,3 +24,13 @@ $ ->
         if data.success
           comment_box.val('').blur()
           $("#comments_#{post_id} > .new-comment-container").before(data.html)
+
+  $(document).on 'click', '.add-step', (e) ->
+    e.preventDefault()
+    count = $('.counter').val()
+    $("<li><input class='instruction-input' name='recipestep[#{count}][description]' placeholder='Instructions' type='text'></input>
+      <br/><input class='measurement' name='recipestep[#{count}][amount]' placeholder='1 Cup' type='text'></input>
+      <input class='ingredient' name='recipestep[#{count}][name]' placeholder='Milk' type='text'></input></li>").appendTo('#steps-input')
+    $('.counter').val(++count)
+    
+  $('textarea').autosize()

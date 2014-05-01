@@ -5,12 +5,24 @@
       %ul
         - @recipe.errors.full_messages.each do |msg|
           %li= msg
+  .row
+    .field
+      = f.text_field :name, :placeholder=>'Recipe Name'
+  .row
+    .field
+      = f.text_area :description, :placeholder => 'Recipe Description'
+  .row
+    %ol#steps-input
+      %li.field
+        %input.instruction-input{ :type => 'text', :placeholder => 'Instruction', :name => "recipestep[0][description]" }
+        %br
+        %input.measurement{ :type => 'text', :placeholder => '1 Cup', :name => "recipestep[0][amount]" }
+        %input.ingredient{ :type => 'text', :placeholder => 'Milk', :name => "recipestep[0][name]" }
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_field :description
-  .actions
-    = f.submit 'Save'
+  %input.counter{ :type => 'hidden', :value => '1' }
+
+  .row
+    .actions
+      %button.add-step.button.normal
+        Add Step
+      = f.submit 'Save', :class => 'button normal success'

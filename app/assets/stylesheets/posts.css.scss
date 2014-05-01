@@ -44,9 +44,11 @@
       .ingredients {
         &:before {
           content: '(';
+          margin-right: -4px;
         }
         &:after {
           content: ')';
+          margin-left: -4px;
         }
         color: #aaa;
         a:link {
@@ -103,4 +105,56 @@
       }
     }
   }
+}
+
+
+input[type="text"], textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 0;
+  outline: none;
+  resize: none;
+  width: 250px;
+}
+
+.field {
+  #post_image_url {
+    width: 250px;
+  }
+  #post_description {
+    width: 250px;
+  }
+}
+
+ol#steps-input {
+  margin-top: 0;
+  padding-left: 1.8em;
+  li {
+    margin-bottom: 5px;
+    .instruction-input {
+      margin-bottom: 5px;
+      width: 227px;
+    }
+    .measurement {
+      width: 50px;
+    }
+    .ingredient {
+      width: 172px;
+    }
+  }
+}
+.add-step, input[type="submit"] {
+  font-size: 14px; 
+}
+.button.normal {
+  padding-top: 0.6rem;
+  padding-right: 1.25rem;
+  padding-bottom: 0.7rem;
+  padding-left: 1.25rem;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.actions {
+  padding-left: 40px;
 }

@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require posts
 //= require local_time
+//= require jquery.autosize.min

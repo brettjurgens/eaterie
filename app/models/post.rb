@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   acts_as_commentable
   acts_as_likeable
   has_one :recipe
+  accepts_nested_attributes_for :recipe
   belongs_to :user
 
   # return a string with the first 2 likers and a quantity

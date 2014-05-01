@@ -51,7 +51,31 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    print post_params
+    @recipe = Recipe.new(recipe_params)
+
     @post = Post.new(post_params)
+
+    @recipe.save
+
+    recipesteps_params.each do |key, rs|
+      if rs[:description].length > 0
+        @step = RecipeStep.new(:description => rs[:description])
+
+        if rs[:name].length > 0
+          @ingredient = Ingredient.find_or_create_by(:name => rs[:name])
+          @step_ingredient = StepIngredient.new(:amount => rs[:amount])
+          @step_ingredient.ingredients << @ingredient
+          @step.step_ingredients << @step_ingredient
+        end
+
+        @step.recipe = @recipe
+        @step.save
+      end
+    end
+
+    @post.recipe = @recipe
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
@@ -62,6 +86,7 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /posts/1
@@ -104,5 +129,13 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:image_url, :description)
+    end
+
+    def recipe_params
+      params.require(:recipe).permit(:name, :description)
+    end
+
+    def recipesteps_params
+      params.require(:recipestep)
     end
 end
