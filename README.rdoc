@@ -1,4 +1,4 @@
-== Eaterie
+= Eaterie
 
 People love food. People love social networks.
 
@@ -8,6 +8,6 @@ Introducing Eaterie, the recipe sharing website.
 
 Enjoy.
 
-= More info
+== More info
 
 This was my final project for CS 242 (Programming Studio) @ UIUC
