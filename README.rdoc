@@ -7,3 +7,7 @@ Why not combine the two...?
 Introducing Eaterie, the recipe sharing website.
 
 Enjoy.
+
+= More info
+
+This was my final project for CS 242 (Programming Studio) @ UIUC
